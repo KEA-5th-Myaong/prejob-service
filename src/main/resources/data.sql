@@ -1,9 +1,9 @@
-insert into "category" (category_id, category_name, created_at, updated_at) values
+insert into `category` (category_id, category_name, created_at, updated_at) values
 	(1, '카테고리1', now(), now()),
 	(2, '카테고리2', now(), now()),
 	(3, '카테고리3', now(), now());
 
-insert into "job" (job_id, category_id, job_name, "index", created_at, updated_at) values
+insert into `job` (job_id, category_id, job_name, `index`, created_at, updated_at) values
 	(1, 1, '직군1', 1, now(), now()),
 	(2, 1, '직군2', 2, now(), now()),
 	(3, 1, '직군3', 3, now(), now()),
@@ -14,7 +14,7 @@ insert into "job" (job_id, category_id, job_name, "index", created_at, updated_a
 	(8, 3, '직군8', 3, now(), now()),
 	(9, 3, '직군9', 4, now(), now());
 
-insert into "preferred_job" (preferred_job_id, member_id, job_id, created_at, updated_at) values
+insert into `preferred_job` (preferred_job_id, member_id, job_id, created_at, updated_at) values
 	(1, 5, 1, now(), now()),
 	(2, 5, 5, now(), now()),
 	(3, 6, 1, now(), now()),
