@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "`category`")
 @Getter
@@ -21,8 +23,13 @@ public class Category extends BaseEntity {
 	@Column(name = "category_name", nullable = false, unique = true, updatable = false)
 	private String name;
 
+	// 해당 카테고리의 직군 목록
+	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Job> jobs;
+
 	@Builder
-	public Category(String name) {
+	public Category(String name, List<Job> jobs) {
 		this.name = name;
+		this.jobs = jobs;
 	}
 }
