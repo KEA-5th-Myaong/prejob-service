@@ -18,5 +18,4 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .addServersItem(new Server().url("/"));
     }
-
 }
