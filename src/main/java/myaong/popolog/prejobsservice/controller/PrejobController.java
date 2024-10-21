@@ -26,14 +26,14 @@ public class PrejobController {
     }
 
     // 회원의 관심 직군 목록 조회
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<ApiResponse<List<PrejobResponse.JobDetail>>> getMemberPrejobs() {
-        List<PrejobResponse.JobDetail> response = prejobService.getPrejobsForMember(5L);  // memberId 5 고정
+        List<PrejobResponse.JobDetail> response = prejobService.getPrejobsForMember(5L);
         return ResponseEntity.ok(ApiResponse.onSuccess(response));
     }
 
     // 관심 직군 등록/수정
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<ApiResponse<Object>> savePrejobs(@Valid @RequestBody PrejobRequest prejobRequest) {
         prejobService.savePrejobs(5L, prejobRequest);  // memberId 5 고정
         return ResponseEntity.ok(ApiResponse.onSuccess(null));

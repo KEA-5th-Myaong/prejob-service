@@ -24,12 +24,11 @@ public class Category extends BaseEntity {
 	private String name;
 
 	// 해당 카테고리의 직군 목록
-	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
 	private List<Job> jobs;
 
 	@Builder
-	public Category(String name, List<Job> jobs) {
+	public Category(String name) {
 		this.name = name;
-		this.jobs = jobs;
 	}
 }
